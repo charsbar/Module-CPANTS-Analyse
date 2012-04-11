@@ -1,7 +1,9 @@
+use utf8;
 use strict;
 use Module::Build;
 
 my $build = Module::Build->new(
+    dist_author => 'Lars Dɪᴇᴄᴋᴏᴡ <daxim@cpan.org>',
     module_name => 'Module::CPANTS::Analyse',
     license     => 'perl',
     requires    => {
@@ -27,6 +29,8 @@ my $build = Module::Build->new(
         'Test::CPAN::Meta::YAML::Version' => '0',
         'ExtUtils::Manifest'        => 0,
         'Set::Scalar'               => 0,
+        'File::chdir'               => 0,
+        'Module::Signature'         => 0,
     },
     build_requires => {
         'Test::More'                => '0',
@@ -35,10 +39,15 @@ my $build = Module::Build->new(
         'Test::NoWarnings'          => '0',
         'Cwd'                       => '0',
     },
+    configure_requires => {
+        'Module::Build'             => '0.4',
+    },
     meta_merge => {
         resources => {
-            repository => 'http://github.com/domm/CPANTS/tree',
-        },
+            homepage => 'http://cpants.perl.org',
+            repository => 'https://github.com/daxim/Module-CPANTS-Analyse',
+            bugtracker => 'https://rt.cpan.org/Dist/Display.html?Name=Module-CPANTS-Analyse',
+            },
         keywords => [
             'CPANTS','kwalitee',
         ],

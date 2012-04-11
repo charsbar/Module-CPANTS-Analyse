@@ -87,11 +87,29 @@ sub kwalitee_indicators {
                 return 0 unless $modules && $uses;
 
                 # There are lots of acceptable strict alternatives
-                my $strict_equivalents = Set::Scalar->new->insert(qw(strict
-                    Moose MooseX::Declare Moose::Role
-                    perl5i::latest perl5i::1 perl5i::2
-                    Modern::Perl common::sense strictures
-                    Mouse Dancer Mojo::Base Coat
+                my $strict_equivalents = Set::Scalar->new->insert(qw(
+                    strict
+                    Any::Moose
+                    Class::Spiffy
+                    Coat
+                    common::sense
+                    Dancer
+                    Mo
+                    Modern::Perl
+                    Mojo::Base
+                    Moo
+                    Moose
+                    Moose::Role
+                    MooseX::Declare
+                    MooseX::Types
+                    Mouse
+                    Mouse::Role
+                    perl5
+                    perl5i::1
+                    perl5i::2
+                    perl5i::latest
+                    Spiffy
+                    strictures
                 ));
 
                 for my $module (@{ $modules }) {
@@ -113,11 +131,29 @@ sub kwalitee_indicators {
                 my $uses    = $d->{uses};
                 return 0 unless $modules && $uses;
 
-                my $warnings_equivalents = Set::Scalar->new->insert(qw(warnings
-                    Moose MooseX::Declare Moose::Role
-                    perl5i::latest perl5i::1 perl5i::2
-                    Modern::Perl common::sense strictures
-                    Mouse Dancer Mojo::Base Coat
+                my $warnings_equivalents = Set::Scalar->new->insert(qw(
+                    warnings
+                    Any::Moose
+                    Class::Spiffy
+                    Coat
+                    common::sense
+                    Dancer
+                    Mo
+                    Modern::Perl
+                    Mojo::Base
+                    Moo
+                    Moose
+                    Moose::Role
+                    MooseX::Declare
+                    MooseX::Types
+                    Mouse
+                    Mouse::Role
+                    perl5
+                    perl5i::1
+                    perl5i::2
+                    perl5i::latest
+                    Spiffy
+                    strictures
                 ));
 
                 for my $module (@{ $modules }) {
@@ -178,7 +214,7 @@ q{Favourite record of the moment:
 
 __END__
 
-=pod
+=encoding UTF-8
 
 =head1 NAME
 
@@ -224,14 +260,11 @@ L<Module::CPANTS::Analyse>
 
 =head1 AUTHOR
 
-Thomas Klausner, <domm@cpan.org>, http://domm.zsi.at
+L<Thomas Klausner|https://metacpan.org/author/domm>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2003-2006, 2009  Thomas Klausner
+Copyright © 2003–2006, 2009 L<Thomas Klausner|https://metacpan.org/author/domm>
 
 You may use and distribute this module according to the same terms
 that Perl is distributed under.
-
-=cut
-

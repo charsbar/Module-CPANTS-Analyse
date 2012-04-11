@@ -447,6 +447,15 @@ my @tests = (
         error => {
         },
     },
+    {
+        dist => 't/eg/Set-Object-1.28.tar.gz',
+        kwalitee => {
+            valid_signature => 0,
+        },
+        error => {
+            valid_signature => -4,
+        },
+    },
 );
 
 plan tests => 1 + 3 * @tests;
@@ -469,7 +478,7 @@ foreach my $t (@tests) {
     $t->{kwalitee}{kwalitee} = ignore; # another Test::Deep import
     cmp_deeply($kw, superhashof($t->{kwalitee}), "kwalitee of $t->{dist}")
         or diag(Dumper $kw);
-    cmp_deeply($d->{error}, $t->{error}, "error of $t->{dist}")
+    cmp_deeply($d->{error}, superhashof($t->{error}), "error of $t->{dist}")
         or diag(Dumper $d->{error});
     #diag(Dumper $d);
 }
