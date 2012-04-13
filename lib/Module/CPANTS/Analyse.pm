@@ -65,7 +65,7 @@ sub unpack {
     };
 
     if (my $error=$@) {
-        if (not $INC{'Test/More.pm'}) {
+        unless ($INC{'Test/More.pm'} or $me->opts->{no_capture}) {
             $me->capture_stdout->stop;
             $me->capture_stderr->stop;
         }
